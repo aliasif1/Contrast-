@@ -1,0 +1,11 @@
+1. Convert input video to yuv format
+ffmpeg -i input.mp4 out.yuv
+
+2. Generate the hevc bit stream
+kvazaar --input out.yuv --input-res=1280x720 --tiles 3x3 --slices tiles --mv-constraint frametilemargin  --output out.hevc
+
+3. Generate the MP4 file
+MP4Box -add out.hevc:split_tiles -new video_tiles.mp4
+
+* The resultant video_tiles.mp4 will have 10 streams and format of video is hvt1
+
