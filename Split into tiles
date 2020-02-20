@@ -19,3 +19,10 @@ MP4Box -rem 3 video_tiles.mp4 -out test_tile_lost.mp4
 
 6. Pack to a mp4 format so that it can be played by vlc
 MP4Box -add a.hvc:fps=25 -inter 0 -new aa.mp4
+
+7. Dashing the file
+a. MP4Box -dash 1000 -rap -segment-name segment_ video_tiles.mp4 
+
+or
+b. MP4Box -dash 100 -profile live -out live.mpd video_tiles.mp4
+
