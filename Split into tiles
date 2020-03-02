@@ -18,7 +18,7 @@ MP4Box -raw 1 video_tiles.mp4 -out a.hvc
 *Do not remove the top left tile as then we cannot convert to hevc stream
 
 5. Remove tiles 
-clear
+MP4Box -rem 3 video_tiles.mp4 -out test_tile_lost.mp4
 
 6. Pack to a mp4 format so that it can be played by vlc
 MP4Box -add a.hvc:fps=25 -inter 0 -new aa.mp4
