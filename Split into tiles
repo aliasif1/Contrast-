@@ -29,3 +29,6 @@ a. MP4Box -dash 1000 -rap -segment-name segment_ video_tiles.mp4
 or
 b. MP4Box -dash 100 -profile live -out live.mpd video_tiles.mp4
 
+8. merge tile 
+MP4Box -add test_tile_lost.mp4#9 -ref 9:tbas:1 -ref 1:sabt:9 original_tiles2.mp4
+
