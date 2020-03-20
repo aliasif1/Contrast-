@@ -1,31 +1,3 @@
-root@780bedff4171:/VideoProcessing/Out# exit
-exit
-ubuntu@m-1:~/Research/Carey/Image$ pwd
-/home/ubuntu/Research/Carey/Image
-ubuntu@m-1:~/Research/Carey/Image$ clear
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ubuntu@m-1:~/Research/Carey/Image$ cd ..
-ubuntu@m-1:~/Research/Carey$ ls
-Image  Nasa.mp4  NasaShort.mp4  NasaShort2.mp4  Out  single_tile_transcoding.py
-ubuntu@m-1:~/Research/Carey$ cat single_tile_transcoding.py 
 import subprocess
 import os
 import time
@@ -165,11 +137,11 @@ def ReplaceTiles(output_folder,replacement_tiled_video,tile_substitution_origina
 #home folder path
 home_folder = ''
 #input folder name
-input_folder = '/home/ubuntu/Research/Carey'
+input_folder = '/VideoProcessing'
 #output folder name
-output_folder = '/home/ubuntu/Research/Carey/Out'
+output_folder = '/VideoProcessing/Out'
 #input video name
-input_video = 'Nasa.mp4'
+input_video = 'NasaShort2.mp4'
 
 
 #Tile Settings
@@ -183,6 +155,9 @@ FolderSettings(output_folder)
 #Calculate input video specs - duration,fps,resolution
 (duration,fps,resolution) = InputVideoSpecs(input_folder,input_video)
 #print(duration,fps,resolution)
+
+#Start Time
+start = time.time()
 
 #Convert the video to yuv format
 output_name = 'out.yuv'
@@ -228,21 +203,7 @@ tile_substitution_original_video = 'out.mp4'
 tile_substituted_video = ReplaceTiles(output_folder,prev_output,tile_substitution_original_video,tile_replace)
 
 
-
-    
-ubuntu@m-1:~/Research/Carey$ cd Image/
-ubuntu@m-1:~/Research/Carey/Image$ nano single_tile_transcoding.py 
-
-  GNU nano 2.9.3                                single_tile_transcoding.py                                          
-
-#Substitute the low resolution tiles with high resolution tiles
-tile_substitution_original_video = 'out.mp4'
-tile_substituted_video = ReplaceTiles(output_folder,prev_output,tile_substitution_original_video,tile_replace)
-
-
 #duration calculation 
 end = time.time()
 
 print('Duration is {}'.format(end - start))
-    
-
