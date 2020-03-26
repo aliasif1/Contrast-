@@ -12,7 +12,7 @@ MP4Box -add out.hevc:split_tiles -new video_tiles.mp4
 
 * The resultant video_tiles.mp4 will have 10 streams and format of video is hvt1
 
-4. Get hevc stream from hvt1 
+4. Get hvc stream from hvt1 
 MP4Box -raw 1 video_tiles.mp4 -out a.hvc
 
 *Do not remove the top left tile as then we cannot convert to hevc stream
